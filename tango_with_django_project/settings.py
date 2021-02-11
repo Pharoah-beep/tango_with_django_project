@@ -44,6 +44,12 @@ INSTALLED_APPS = [
     'rango',
 ]
 
+PASSWORD_HASHERS = (
+'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+)
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -117,8 +123,15 @@ USE_L10N = True
 USE_TZ = True
 
 
+LOGIN_URL = 'rango:login'
+
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 STATICFILES_DIRS = [STATIC_DIR,
 ]
 STATIC_URL = '/static/'
+
+
+
